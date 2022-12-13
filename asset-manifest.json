@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/movieslover/static/css/main.77d6760c.css",
-    "main.js": "/movieslover/static/js/main.c8425537.js",
+    "main.css": "/movieslover/static/css/main.32834b60.css",
+    "main.js": "/movieslover/static/js/main.96f2e391.js",
     "static/js/787.6771c560.chunk.js": "/movieslover/static/js/787.6771c560.chunk.js",
     "static/media/bootstrap-icons.woff?": "/movieslover/static/media/bootstrap-icons.6959d0d983ee318f8880.woff",
     "static/media/bootstrap-icons.woff2?": "/movieslover/static/media/bootstrap-icons.b2e5aab643c6f0fd2da6.woff2",
     "index.html": "/movieslover/index.html",
-    "main.77d6760c.css.map": "/movieslover/static/css/main.77d6760c.css.map",
-    "main.c8425537.js.map": "/movieslover/static/js/main.c8425537.js.map",
+    "main.32834b60.css.map": "/movieslover/static/css/main.32834b60.css.map",
+    "main.96f2e391.js.map": "/movieslover/static/js/main.96f2e391.js.map",
     "787.6771c560.chunk.js.map": "/movieslover/static/js/787.6771c560.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77d6760c.css",
-    "static/js/main.c8425537.js"
+    "static/css/main.32834b60.css",
+    "static/js/main.96f2e391.js"
   ]
 }
