@@ -5,7 +5,7 @@ function MoviesNameList(props) {
         <> 
          {props.movies.map((movie,index)=>(
     
-            <button className="dropdown-item  dropdown-itemNames"  key={index} >{movie.Title}</button>
+            <button className="dropdown-item  dropdown-itemNames"  key={index} onClick={()=> props.setTest(movie)} >{movie.Title}</button>
                        
         ))}
         </>

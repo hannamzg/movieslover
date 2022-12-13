@@ -5,7 +5,6 @@ import Home from "./components/home";
 import About from "./components/about";
 import Footer from './components/footer';
 import Search from './components/search';
- import MovieInfo from './components/movieInfo';
  import { Route,Routes } from 'react-router-dom';
 
 
