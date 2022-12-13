@@ -16,6 +16,7 @@ function GetMoviesName(props) {
         getMovie()
         
     },[props.name]) 
+    
     if (movies) {
         return <MoviesNameList movies={movies} />
     }

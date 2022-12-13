@@ -9,7 +9,7 @@ function MovieList(props) {
                         <div> 
                              <h5 className="m-3 " id="MoviesTitels">{movie.Title}</h5>
                         </div>
-                             <img src={movie.Poster} alt="movie"  className="images" />
+                             <img src={movie.Poster} alt="movie"  className="images"  onClick={()=> props.setTest(movie)}  />
                     </div>
 
                 </div>            
