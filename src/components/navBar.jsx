@@ -34,6 +34,20 @@ const NavBar= ()=>{
                     search
                 </NavLink>
                 </li>
+                <li className="nav-item">
+                <NavLink  to="favourit" className={({ isActive }) =>
+                    isActive ? "nav-link activeStyle" :"nav-link notActive"
+                    }>
+                    favourit
+                </NavLink>
+                </li>
+                <li className="nav-item">
+                <NavLink  to="singup" className={({ isActive }) =>
+                    isActive ? "nav-link activeStyle" :"nav-link notActive"
+                    }>
+                    sing up
+                </NavLink>
+                </li>
                 </ul>   
                 
                 <form className="d-flex" role="search">

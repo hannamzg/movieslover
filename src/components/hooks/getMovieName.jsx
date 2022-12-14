@@ -24,8 +24,11 @@ function GetMoviesName(props) {
           
     },[props.name]) 
 
-    if (test) {
-        return <MovieInfo name={test} setTest={()=>restart()}/>        
+    if (test && movies) {
+        return(<>
+                <MovieInfo name={test} setTest={()=>restart()}/>
+                <MoviesNameList movies={movies} test={test} setTest={setTest}/> 
+            </> ) 
     }
     if (movies) {
         return <MoviesNameList movies={movies} test={test} setTest={setTest}/>

@@ -2,10 +2,34 @@
 import  {getMovieServeies} from "../services/MoviesServies";
 import { useEffect,useState } from "react";
 import MovieList from "../MovieList";
-import MovieInfo from "../movieInfo"
+import MovieInfo from "../movieInfo";
+
 function GetMovies(props) {
     const [movies,setMovies] = useState([]);
     const [test,setTest] = useState();
+    const [favorite,setFavorite] = useState([]);
+
+    const saveToLocalStorage = (items) => {
+        localStorage.setItem('react-movie-app-favouritesfinalReact', JSON.stringify(items));
+    };
+
+    
+    
+    useEffect(() => {
+        const movieFavourites = JSON.parse(
+            localStorage.getItem('react-movie-app-favouritesfinalReact')
+        );
+    
+        if (movieFavourites) {
+            setFavorite(movieFavourites);
+        }
+      }, []);
+
+    const AddtoFavouritesMovie = (movie) =>{
+        const newFavouritesList = [...favorite,movie];
+        setFavorite(newFavouritesList)
+        saveToLocalStorage(newFavouritesList);
+    } 
 
     function restart() {
         setTest()
@@ -15,17 +39,24 @@ function GetMovies(props) {
         const getMovie = async()=>{
             const{data}= await getMovieServeies(props.name);
             setMovies(data.Search) 
-        };
+    };
        
         getMovie()
         
     },[props.name]) 
     
-    if (test) {
-        return <MovieInfo name={test} setTest={()=>restart()}/>        
+    if (test && movies) {
+        return(
+            <>
+                <MovieInfo name={test} setTest={()=>restart()}/>
+                <MovieList movies={movies} test={test} setTest={setTest} AddtoFavouritesMovie={AddtoFavouritesMovie} /> 
+            </> 
+            ) 
     }
-    if (movies) {
-        return <MovieList movies={movies} test={test} setTest={setTest}/>
+    if (movies ) {
+      return <>
+        <MovieList movies={movies} test={test} setTest={setTest} AddtoFavouritesMovie={AddtoFavouritesMovie} /> 
+      </>
     }
     else{
          return
@@ -35,4 +66,4 @@ function GetMovies(props) {
 }
 
 export default GetMovies;
-
+ 
