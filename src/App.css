@@ -157,7 +157,14 @@ footer{
   cursor: pointer;
 
 }
+.singOut{
+  color:white!important;
+   background-color: red;
+   width: fit-content ;
+   padding: 10px !important;
+   border-radius: 10px;
 
+}
 .addToFavorit{
   width: 100%;
   background-color: #4361ee;

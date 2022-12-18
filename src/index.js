@@ -3,19 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from "./context/auth.context";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import { BrowserRouter } from "react-router-dom";
-
+//  npm install gh-pages --save-div  for githup
+//npm run deploy
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
   <BrowserRouter>
-    <App />
+    <AuthProvider>
+        <App />
+    </AuthProvider>
   </BrowserRouter>
 </React.StrictMode>
 );

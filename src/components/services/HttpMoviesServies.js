@@ -1,30 +1,30 @@
 //npm i axios
 /* import axios from "axios";
  */
-import axios from "axios";
+ import axios from "axios";
 
-
+/* 
 let config = {
-  apiUrl: "http://www.omdbapi.com/?"
-} 
+  apiUrll: "http://www.omdbapi.com/?"
+}  */
 
-axios.defaults.baseURL = config.apiUrl;
+/* axios.defaults.baseURL = config.apiUrll;
 
-export function setCommonHeader(headerName,value){
+  export function setCommonHeaderr(headerName,value){
   axios.defaults.headers.common[headerName]=value;
-}
+}   */
 
-const httpService = {
+const httpServicee = {
   get: axios.get,
- /*  post: axios.post,
+   post: axios.post,
   patch: axios.patch,
   put: axios.put,
-  delete: axios.delete, */
+  delete: axios.delete,  
   axios,
 };
 
-export default httpService; 
-
+export default httpServicee; 
+ 
 
 
 

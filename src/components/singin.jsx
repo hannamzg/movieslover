@@ -1,8 +1,7 @@
 import Input from "./common/input";
 import PageHeader from "./common/pageHeader";
 import formikValidateUsingJoi from "./utils/formikValidateUsingJoi ";
-/* import { createUser } from "./services/userService";
- */import Joi from "joi";
+import Joi from "joi";
 import { useState } from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
@@ -10,24 +9,22 @@ import { useAuth } from "../context/auth.context";
 import {Navigate} from "react-router-dom"
 
 
-
 // npm install formik
-function SingUp() {
+
+function SingIn() {
+
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const {createUser,user} =useAuth();
-
+  
+  const {login:loginUser,user} =useAuth();
 
   const form = useFormik({
     validateOnMount: true,
     initialValues: {
       email: "",
       password: "",
-      name: "",
     },
-    
     validate: formikValidateUsingJoi({
-      name: Joi.string().min(2).max(255).required(),
       email: Joi.string()
         .min(6)
         .max(255)
@@ -37,14 +34,15 @@ function SingUp() {
     }),
 
     async onSubmit(values) {
+          loginUser(values)
       try {
-        await createUser({ ...values, biz: false });
-        navigate("/signin");
+        await loginUser(values);
+        navigate("/")
       } catch ({ response }) {
         if (response && response.status === 400) {
           setError(response.data);
         }
-      }
+      } 
     },
   });
   if(user){
@@ -53,7 +51,7 @@ function SingUp() {
 
   return (
     <>
-      <PageHeader title={"sing up"} description={"you lucky  its free"} />
+      <PageHeader title={"sing in"} description={"welcome back!"} />
 
       <form onSubmit={form.handleSubmit} noValidate autoComplete="off">
         {error && <div className="alert alert-danger">{error}</div>}
@@ -73,24 +71,12 @@ function SingUp() {
           error={form.touched.password && form.errors.password}
         />
 
-        <Input
-          type="name"
-          label="name"
-          required
-          {...form.getFieldProps("name")}
-          error={form.touched.name && form.errors.name}
-        />
-
-        <button
-          type="submit"
-          disabled={!form.isValid}
-          className=" mt-3 singBtn"
-        >
-          Sign Up
+        <button type="submit" disabled={!form.isValid} className="mt-3 singBtn">
+          Sign In
         </button>
       </form>
     </>
   );
 }
 
-export default SingUp;
+export default SingIn;

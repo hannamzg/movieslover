@@ -1,6 +1,6 @@
- import httpService from "./HttpMoviesServies";
+  import Test from "./HttpMoviesServies";
 
 
 export function getMovieServeies(name) {
-    return httpService.get(`http://www.omdbapi.com/?s=${name}&apikey=cfaf86ed`);
-}
+    return Test.get(`http://www.omdbapi.com/?s=${name}&apikey=cfaf86ed`);
+} 
