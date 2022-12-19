@@ -9,7 +9,7 @@ const NavBar = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <Link to={"home"} className="a">
+          <Link to={"/"} className="a">
             <div>
               movies lover{" "}
               <i className="bi bi-film" style={{ margin: "10px" }}></i>
@@ -69,8 +69,8 @@ const NavBar = () => {
                 </NavLink>
               </li>
               {user?.biz && ( <li className="nav-item">
-                <NavLink to="createMovie" className={({ isActive }) =>   isActive ? "nav-link activeStyle" : "nav-link notActive"  } >
-                  create your Movie
+                <NavLink to="my-cards" className={({ isActive }) =>   isActive ? "nav-link activeStyle" : "nav-link notActive"  } >
+                my-cards
                 </NavLink>
               </li>)}
               
@@ -106,6 +106,16 @@ const NavBar = () => {
                         }
                       >
                         sing up
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink
+                        to="singupBiz"
+                        className={({ isActive }) =>
+                          isActive ? "nav-link activeStyle" : "nav-link notActive"
+                        }
+                      >
+                        sing up biz
                       </NavLink>
                     </li>
                   </>

@@ -1,6 +1,11 @@
-  import Test from "./HttpMoviesServies";
+import axios from "axios";
 
 
-export function getMovieServeies(name) {
-    return Test.get(`http://www.omdbapi.com/?s=${name}&apikey=cfaf86ed`);
+
+export async function getMovieServeies(name) {
+    var instance = axios.create();
+    delete instance.defaults.headers.common['x-auth-token']; 
+    let stam = instance.get(`http://www.omdbapi.com/?s=${name}&apikey=cfaf86ed`);
+    return stam
+
 } 

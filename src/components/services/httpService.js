@@ -13,6 +13,7 @@ const httpService = {
   patch: axios.patch,
   put: axios.put,
   delete: axios.delete,
+  axios,
 };
 
 export default httpService;

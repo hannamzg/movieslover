@@ -10,8 +10,10 @@ import { Route,Routes } from 'react-router-dom';
 import SingUp from './components/singUp';
 import SingIn from './components/singin';
 import CreateCard from './components/createCard';
-/* import ProtectedRoute from "./components/common/protectedRoute";
- */
+ import ProtectedRoute from "./components/protectedRoute";
+import MyCards from './components/myCards';
+import SingUpbiz from './components/SignUpBiz';
+ 
 //  npm i react-router-dom
 
 function App() {
@@ -30,7 +32,9 @@ function App() {
         <Route path="favourit" element={<FavouritList />} />
         <Route path="signin" element={<SingIn />} />
         <Route path="singup" element={<SingUp />} />
-        <Route path="createMovie" element={<CreateCard />} />
+        <Route path="singupBiz" element={<SingUpbiz />} />
+        <Route path="create-card" element={<ProtectedRoute onlyBiz> <CreateCard /></ProtectedRoute>} />
+        <Route path="my-cards" element={<ProtectedRoute onlyBiz> <MyCards /></ProtectedRoute>} />
       </Routes>
     </main>
 

@@ -1,18 +1,19 @@
-/* import { useFormik } from "formik";
- */ import Input from "./common/input";
-/* import PageHeader from "./common/pageHeader";
- */import Joi from "joi";
-/* import formikValidateUsingJoi from "../utils/formikValidateUsingJoi";
- */import { useState } from "react";
-/* import { createCard } from "./services/cardService";
- *//* import { toast } from "react-toastify"; */
-import { useNavigate } from "react-router-dom";
+ import { useFormik } from "formik";
+  import Input from "./common/input";
+ import PageHeader from "./common/pageHeader";
+ import Joi from "joi";
+ import formikValidateUsingJoi from "./utils/formikValidateUsingJoi ";
+ import { useState } from "react";
+ import { createCard } from "./services/cardService";
+/*   import { toast } from "react-toastify"; 
+ */import { useNavigate } from "react-router-dom";
 
 
 // npm i toastify
 
 function  CreateCard() {
-/*     const [error, setError] = useState("");
+    const [error, setError] = useState("");
+
     const navigate = useNavigate();
     const form = useFormik({
       validateOnMount: true,
@@ -48,8 +49,8 @@ function  CreateCard() {
         }
 
       await  createCard(body);
-        toast("yes nice card btw")
-        navigate("/my-cards");
+/*         toast("yes nice card btw")
+ */        navigate("/my-cards");
        }catch({response}){
           if(response && response.status ===400){
             setError(response.data);
@@ -57,59 +58,59 @@ function  CreateCard() {
        }
 
       },
-    }); */
+    }); 
   
     
     return (
         <>
-{/*       <PageHeader title="Create Card" description="Create Card" />
- */}
+       <PageHeader title="Create Card" description="Create Card" />
+ 
       <form noValidate autoComplete="off">
-       {/*  {error && <div className="alert alert-danger">{error}</div>} */}
+         {error && <div className="alert alert-danger">{error}</div>} 
 
         <Input
           type="text"
           label="Name"
           required
-        /*   {...form.getFieldProps("bizName")}
-          error={form.touched.bizName && form.errors.bizName} */
+           {...form.getFieldProps("bizName")}
+          error={form.touched.bizName && form.errors.bizName} 
         />
 
         <Input
           type="text"
           label="Description"
           required
-         /*  {...form.getFieldProps("bizDescription")}
-          error={form.touched.bizDescription && form.errors.bizDescription} */
+           {...form.getFieldProps("bizDescription")}
+          error={form.touched.bizDescription && form.errors.bizDescription} 
         />
 
         <Input
           type="text"
           label="Address"
           required
-          /* {...form.getFieldProps("bizAddress")}
-          error={form.touched.bizAddress && form.errors.bizAddress} */
+          {...form.getFieldProps("bizAddress")}
+          error={form.touched.bizAddress && form.errors.bizAddress} 
         />
 
         <Input
           type="text"
           label="Phone"
           required
-         /*  {...form.getFieldProps("bizPhone")}
-          error={form.touched.bizPhone && form.errors.bizPhone} */
+           {...form.getFieldProps("bizPhone")}
+          error={form.touched.bizPhone && form.errors.bizPhone} 
         />
 
         <Input
           type="text"
           label="Image"
-        /*   {...form.getFieldProps("bizImage")}
-          error={form.touched.bizImage && form.errors.bizImage} */
+       {...form.getFieldProps("bizImage")}
+          error={form.touched.bizImage && form.errors.bizImage} 
         />
 
         <div className="my-2">
           <button
             type="submit"
-         /*    disabled={!form.isValid} */
+             disabled={!form.isValid} 
             className="btn btn-primary"
           >
             create card

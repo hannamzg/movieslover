@@ -1,9 +1,9 @@
 import httpService, { setCommonHeader } from "./httpService";
 import jwtDecode from "jwt-decode";
 
-const TOKEN_KEY = "movieToken";
-setCommonHeader();
-
+const TOKEN_KEY = "MovieToken";
+ setTokenHeader();
+ 
 export function getJWT() {
   return localStorage.getItem(TOKEN_KEY);
 }
@@ -13,18 +13,18 @@ export function createUser(user) {
 }
 
 export function setTokenHeader() {
-  setCommonHeader("x-auth-bla", getJWT());
+  setCommonHeader("x-auth-token", getJWT());
 }
 
 export async function loginUser(credentials) {
   const { data } = await httpService.post("/auth", credentials);
   localStorage.setItem(TOKEN_KEY, data.token);
-  setCommonHeader();
+  setTokenHeader();
 }
 
 export function logout() {
   localStorage.removeItem(TOKEN_KEY);
-  setCommonHeader();
+  setTokenHeader();
 }
 
 export function getUser() {
