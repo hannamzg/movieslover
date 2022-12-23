@@ -13,6 +13,8 @@ import CreateCard from './components/createCard';
  import ProtectedRoute from "./components/protectedRoute";
 import MyCards from './components/myCards';
 import SingUpbiz from './components/SignUpBiz';
+import DeleteCard from './components/deleteCard';
+import EditCard from './components/editCard';
  
 //  npm i react-router-dom
 
@@ -33,6 +35,8 @@ function App() {
         <Route path="signin" element={<SingIn />} />
         <Route path="singup" element={<SingUp />} />
         <Route path="singupBiz" element={<SingUpbiz />} />
+        <Route path="/my-cards/edit/:id" element={ <ProtectedRoute onlyBiz> <EditCard /></ProtectedRoute> }/>
+        <Route path="/my-cards/delete/:id" element={ <ProtectedRoute onlyBiz> <DeleteCard /></ProtectedRoute> }/>
         <Route path="create-card" element={<ProtectedRoute onlyBiz> <CreateCard /></ProtectedRoute>} />
         <Route path="my-cards" element={<ProtectedRoute onlyBiz> <MyCards /></ProtectedRoute>} />
       </Routes>

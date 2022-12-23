@@ -5,8 +5,8 @@
  import formikValidateUsingJoi from "./utils/formikValidateUsingJoi ";
  import { useState } from "react";
  import { createCard } from "./services/cardService";
-/*   import { toast } from "react-toastify"; 
- */import { useNavigate } from "react-router-dom";
+   import { toast } from "react-toastify"; 
+ import { useNavigate } from "react-router-dom";
 
 
 // npm i toastify
@@ -42,15 +42,14 @@ function  CreateCard() {
       }),
       async onSubmit(values) {
        try{
-        const {bizImage, ...body} =values;
-
+        const {bizImage, ...body}=values;
         if(bizImage){
           body.bizImage = bizImage;
         }
-
-      await  createCard(body);
-/*         toast("yes nice card btw")
- */        navigate("/my-cards");
+           await createCard(body);
+        toast("yes nice card btw")
+         navigate("/my-cards");
+ 
        }catch({response}){
           if(response && response.status ===400){
             setError(response.data);
@@ -62,10 +61,10 @@ function  CreateCard() {
   
     
     return (
-        <>
+      <>
        <PageHeader title="Create Card" description="Create Card" />
  
-      <form noValidate autoComplete="off">
+      <form onSubmit={form.handleSubmit} noValidate autoComplete="off">
          {error && <div className="alert alert-danger">{error}</div>} 
 
         <Input

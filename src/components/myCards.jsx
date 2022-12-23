@@ -13,8 +13,8 @@ const MyCards = () => {
         description="your cards are in the list below"
       />
 
-      <div className="row">
-        <Link to="/create-card">Create a New Card</Link>
+      <div className="row" >
+        <Link to="/create-card" className="createNewCard">Create a New Card</Link>
       </div>
 
       <div className="row">

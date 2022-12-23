@@ -121,8 +121,27 @@ footer{
     padding: 20px;
 }
 
+.createNewCard{
+  background-color: #4361ee;
+  max-width: 25vw;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  width: fit-content !important;
+  margin: 10px;
+
+}
+.createNewCard:hover{
+  background-color: #4361ee;
+  max-width: 25vw;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  width: fit-content;
+  margin: 10px;
 
 
+}
 
 .infoMovie{
   top: 0;
