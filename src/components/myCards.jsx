@@ -14,7 +14,7 @@ const MyCards = () => {
       />
 
       <div className="row" >
-        <Link to="/create-card" className="createNewCard">Create a New Card</Link>
+        <Link to="/create-card" className="createNewCard"><h2>Create a New Card</h2></Link>
       </div>
 
       <div className="row">
