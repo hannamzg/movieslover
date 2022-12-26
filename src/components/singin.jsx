@@ -6,7 +6,9 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth.context";
-import {Navigate} from "react-router-dom"
+import {Navigate} from "react-router-dom";
+   import { toast } from "react-toastify"; 
+
 
 
 // npm install formik
@@ -34,7 +36,17 @@ function SingIn() {
     }),
 
     async onSubmit(values) {
-          loginUser(values)
+          loginUser(values);
+          toast('🦄 welcome back', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
       try {
         await loginUser(values);
         navigate("/")
@@ -47,6 +59,7 @@ function SingIn() {
   });
   if(user){
     return <Navigate to="/"/>
+    
   }
 
   return (

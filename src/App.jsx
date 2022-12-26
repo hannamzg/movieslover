@@ -15,7 +15,8 @@ import MyCards from './components/myCards';
 import SingUpbiz from './components/SignUpBiz';
 import DeleteCard from './components/deleteCard';
 import EditCard from './components/editCard';
- 
+import "react-toastify/dist/ReactToastify.css"
+import { ToastContainer } from "react-toastify";
 //  npm i react-router-dom
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
     </header>
     
     <main className='flex-fill container'>
+    <ToastContainer/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />     

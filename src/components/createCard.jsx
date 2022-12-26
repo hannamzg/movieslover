@@ -43,12 +43,23 @@ function  CreateCard() {
       async onSubmit(values) {
        try{
         const {bizImage, ...body}=values;
+
         if(bizImage){
           body.bizImage = bizImage;
         }
-           await createCard(body);
-        toast("yes nice card btw")
-         navigate("/my-cards");
+
+        await createCard(body);
+        toast('🦄 nice card btw', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
+        navigate("/my-cards");
  
        }catch({response}){
           if(response && response.status ===400){

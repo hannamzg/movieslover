@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (credentials) => {
     const response = await loginUser(credentials);
     refreshUser();
-
+    
     return response;
   };
 

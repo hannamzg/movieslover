@@ -51,7 +51,16 @@ const EditCard = () => {
         }
 
         await updateCard(id, body);
-         toast("A new Card Created 👏🏾");
+        toast('🦄 nice edit', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
          navigate("/my-cards");
       } catch ({ response }) {
         if (response && response.status === 400) {
