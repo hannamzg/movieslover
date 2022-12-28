@@ -11,7 +11,7 @@ function MovieList(props) {
                         <div> 
                              <h5 className="m-3 " id="MoviesTitels">{movie.Title}</h5>
                             <div onClick={()=>props.AddtoFavouritesMovie(movie)} className="overlay d-flex align-items-center justify-content-center">
-                                <AddToFavourit add={"add to favourit"}/>
+                                <AddToFavourit icon={"bi bi-plus-circle"} add={"add to favourit"}/>
                             </div>
                         </div>
                              <img src={movie.Poster} alt="movie"  className="images"  onClick={()=> props.setTest(movie)}  />
