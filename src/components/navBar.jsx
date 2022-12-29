@@ -40,7 +40,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="/movieslover/about"
+                  to="/movieslover/about/"
                   className={({ isActive }) =>
                     isActive ? "nav-link activeStyle" : "nav-link notActive"
                   }
