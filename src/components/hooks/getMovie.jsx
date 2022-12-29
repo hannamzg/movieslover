@@ -3,6 +3,7 @@ import  {getMovieServeies} from "../services/MoviesServies";
 import { useEffect,useState } from "react";
 import MovieList from "../MovieList";
 import MovieInfo from "../movieInfo";
+import { toast } from "react-toastify";
 
 function GetMovies(props) {
     const [movies,setMovies] = useState([]);
@@ -13,8 +14,6 @@ function GetMovies(props) {
         localStorage.setItem('react-movie-app-favouritesfinalReact', JSON.stringify(items));
     };
 
-    
-    
     useEffect(() => {
         const movieFavourites = JSON.parse(
             localStorage.getItem('react-movie-app-favouritesfinalReact')
@@ -26,6 +25,12 @@ function GetMovies(props) {
       }, []);
 
     const AddtoFavouritesMovie = (movie) =>{
+         for(let i=0; i<favorite.length; i++){
+            if (movie.Title === favorite[i].Title) {
+                toast("you have this movie in favorite")
+                return;           
+            }
+        } 
         const newFavouritesList = [...favorite,movie];
         setFavorite(newFavouritesList)
         saveToLocalStorage(newFavouritesList);

@@ -13,6 +13,7 @@ function FavouritList(props) {
           setFavorite(movieFavourites);
       }
     }, []);
+    
     const saveToLocalStorage = (items) => {
         localStorage.setItem('react-movie-app-favouritesfinalReact', JSON.stringify(items));
     };
