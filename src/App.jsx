@@ -30,8 +30,8 @@ function App() {
     <main className='flex-fill container'>
     <ToastContainer/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="about" element={<About />} />     
+        <Route path="home" element={<Home />} />
+        <Route path="/movieslover/about" element={<About />} />     
         <Route path="search" element={< Search/>} /> 
         <Route path="favourit" element={<FavouritList />} />
         <Route path="signin" element={<SingIn />} />

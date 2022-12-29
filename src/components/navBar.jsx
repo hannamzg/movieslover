@@ -30,7 +30,7 @@ const NavBar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
-                  to="/"
+                  to="home"
                   className={({ isActive }) =>
                     isActive ? "nav-link activeStyle" : "nav-link notActive"
                   }
@@ -40,7 +40,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="about"
+                  to="/movieslover/about"
                   className={({ isActive }) =>
                     isActive ? "nav-link activeStyle" : "nav-link notActive"
                   }
