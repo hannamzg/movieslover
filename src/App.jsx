@@ -31,7 +31,7 @@ function App() {
     <ToastContainer/>
       <Routes>
         <Route path="home" element={<Home />} />
-        <Route path="#/about" element={<About />} />     
+        <Route path="about" element={<About />} />     
         <Route path="search" element={< Search/>} /> 
         <Route path="favourit" element={<FavouritList />} />
         <Route path="signin" element={<SingIn />} />

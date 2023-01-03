@@ -12,14 +12,13 @@ const MyCards = () => {
         title="My Cards"
         description="your cards are in the list below"
       />
-
       <div className="row" >
         <Link to="/create-card" className="createNewCard"><h2>Create a New Card</h2></Link>
       </div>
 
-      <div className="row">
+      <div >
         {!cards.length ? (
-          <p>No Cards..</p>
+            <div className="custom-loader"></div>
         ) : (
           cards.map((card) => <Card key={card._id} card={card} />)
         )}

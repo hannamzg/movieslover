@@ -34,23 +34,31 @@ function FavouritList(props) {
         } 
     }        
    
-
+    if(Favorite.length <1 ){
+        return (
+        <div style={{display:"flex" , justifyContent:"center", alignItems:"center",height:"100vh",flexDirection:"column"}}>
+            <h1 style={{marginBlockEnd:"70px"}}>no Favorite</h1>
+            <div className="custom-loader"></div>
+        </div>
+        )
+         
+    }
 
     return(
         <> 
         {Favorite.map((movie,index)=>(
-                <div className='image-container d-flex justify-content-start m-3'  style={{alignItems:"center"}} key={index} >
-                    <div className="d-flex " style={{flexDirection:"column" , alignItems:"center"}}>
-                        <div> 
-                            <h5 className="m-3 " id="MoviesTitels">{movie.Title}</h5>
-                            <div onClick={()=> removeFromFavorit(movie)} className="overlay d-flex align-items-center justify-content-center">
-                                <AddToFavourit icon={"bi bi-dash-circle"} add={"remove"}/>
-                            </div> 
-                        </div>
-                            <img src={movie.Poster} alt="movie"  className="images"  onClick={()=> props.setTest(movie)}  />
-                   </div>
-                </div>            
-        ))}
+                    <div className='image-container d-flex justify-content-start m-3'  style={{alignItems:"center"}} key={index} >
+                        <div className="d-flex " style={{flexDirection:"column" , alignItems:"center"}}>
+                            <div> 
+                                <h5 className="m-3 " id="MoviesTitels">{movie.Title}</h5>
+                                <div onClick={()=> removeFromFavorit(movie)} className="overlay d-flex align-items-center justify-content-center">
+                                    <AddToFavourit icon={"bi bi-dash-circle"} add={"remove"}/>
+                                </div> 
+                            </div>
+                                <img src={movie.Poster} alt="movie"  className="images"  onClick={()=> props.setTest(movie)}  />
+                    </div>
+                    </div>            
+            ))}
         </>
        
     )

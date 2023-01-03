@@ -9,7 +9,7 @@ const NavBar = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
-          <Link to={"/"} className="a">
+          <Link to={"/home"} className="a">
             <div>
               movies lover{" "}
               <i className="bi bi-film" style={{ margin: "10px" }}></i>
@@ -30,7 +30,7 @@ const NavBar = () => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
-                  to="home"
+                  to="/home"
                   className={({ isActive }) =>
                     isActive ? "nav-link activeStyle" : "nav-link notActive"
                   }
@@ -40,7 +40,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="#/about"
+                  to="/about"
                   className={({ isActive }) =>
                     isActive ? "nav-link activeStyle" : "nav-link notActive"
                   }
@@ -50,7 +50,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="search"
+                  to="/search"
                   className={({ isActive }) =>
                     isActive ? "nav-link activeStyle" : "nav-link notActive"
                   }
@@ -60,7 +60,7 @@ const NavBar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  to="favourit"
+                  to="/favourit"
                   className={({ isActive }) =>
                     isActive ? "nav-link activeStyle" : "nav-link notActive"
                   }
@@ -69,7 +69,7 @@ const NavBar = () => {
                 </NavLink>
               </li>
               {user?.biz && ( <li className="nav-item">
-                <NavLink to="my-cards" className={({ isActive }) =>   isActive ? "nav-link activeStyle" : "nav-link notActive"  } >
+                <NavLink to="/my-cards" className={({ isActive }) =>   isActive ? "nav-link activeStyle" : "nav-link notActive"  } >
                 my-cards
                 </NavLink>
               </li>)}
@@ -90,7 +90,7 @@ const NavBar = () => {
                   <>
                       <li className="nav-item">
                       <NavLink
-                        to="signin"
+                        to="/signin"
                         className={({ isActive }) =>
                           isActive ? "nav-link activeStyle" : "nav-link notActive"
                         }
@@ -100,7 +100,7 @@ const NavBar = () => {
                     </li>
                     <li className="nav-item">
                       <NavLink
-                        to="singup"
+                        to="/singup"
                         className={({ isActive }) =>
                           isActive ? "nav-link activeStyle" : "nav-link notActive"
                         }
@@ -110,7 +110,7 @@ const NavBar = () => {
                     </li>
                     <li className="nav-item">
                       <NavLink
-                        to="singupBiz"
+                        to="/singupBiz"
                         className={({ isActive }) =>
                           isActive ? "nav-link activeStyle" : "nav-link notActive"
                         }
